@@ -31,10 +31,10 @@ back_to_sign_up_path = '//*[@id="SUGContainer"]/div[2]/div/div/div[1]/div[3]/div
 
 
 
-file = open("sign_up_week_count.txt", "r+")
+week_count_file = open("sign_up_week_count.txt", "r+")
 
 ##read lines from a file.
-lines = file.readlines()
+lines = week_count_file.readlines()
 
 #read the last line from the file.
 week_number = lines[-1]
@@ -110,10 +110,9 @@ sign_up(home_url.format(week_number + "_test3"))
 click(sign_up_button_path)
 
 
-
 #write to file then submit
 new_week_number = int(week_number) + 1
-file.write(str(new_week_number) + "\n")
+week_count_file.write(str(new_week_number) + "\n")
 
 time.sleep(5)
 print("You're signed up for testing")
@@ -123,4 +122,4 @@ driver.quit()
 
 #close files
 details_file.close()
-file.close()
+week_count_file.close()
