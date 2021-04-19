@@ -65,7 +65,7 @@ def sign_up(url):
     click(submit_path)
 
     #enter first name
-    first_name_path = "//input[@id='firstname']"
+    first_name_path = '//input[@id="firstname"]'
     write(first_name_path, first_name)
 
     #enter last name
